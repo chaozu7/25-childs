@@ -10,7 +10,7 @@ include(get_theme_file_path( 'includes/admin/genre-save.php' ));
 include(get_theme_file_path( 'includes/admin/books-metabox.php' ));
 include(get_theme_file_path( 'includes/back/latest-books.php'));
 include(get_theme_file_path( 'includes/back/pagination-limits.php' ));
-include(get_theme_file_path( 'includes/blocks/register-blocks.php' ));
+
 
 //Hooks
 
@@ -21,4 +21,3 @@ add_action( 'create_book-genre', 'fz_genre_save_data' );
 add_action( 'book-genre_edit_form_fields', 'fz_genre_edit_form_fields');
 add_action( 'edited_book-genre', 'fz_genre_save_data' );
 add_action( 'pre_get_posts', 'fz_modify_genre_pagination' );
-add_action( 'init', 'fz_register_faq_block' );

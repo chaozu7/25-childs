@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/accordion-faq",
+  "version": "0.1.0",
+  "title": "Accordion FAQ",
+  "category": "text",
+  "keywords": [
+    "faq"
+  ],
+  "icon": "editor-help",
+  "description": "Accordion FAQ.",
+  "example": {
+    "attributes": {
+      "cover": "./preview.png"
+    },
+    "viewportWidth": 800
+  },
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Frequently Asked Questions"
+    },
+    "faqs": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "textdomain": "twentyfifthchild",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
