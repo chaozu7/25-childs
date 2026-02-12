@@ -1,0 +1,47 @@
+.fz-accordion-container {
+    counter-reset: faq-counter;
+    border-top: 1px solid #000;
+}
+
+.fz-faq-item {
+    counter-increment: faq-counter;
+    border-bottom: 1px solid #000;
+    overflow: hidden;
+}
+
+.fz-faq-number::before {
+    content: counter(faq-counter, decimal-leading-zero) ". ";
+    font-family: var(--font-sans);
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.fz-faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.fz-faq-icon {
+    margin-left: auto;
+}
+
+.fz-faq-item.is-open {
+    .icon-plus {
+        display: none;
+    }
+    .icon-minus {
+        display: block;
+    }
+    .fz-faq-content {
+        display: block !important;
+        padding-bottom: 25px;
+    }
+}

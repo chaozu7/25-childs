@@ -1,0 +1,222 @@
+:root {
+    --c-black: #000000;
+    --c-white: #ffffff;
+    --c-grey-light: #f6f6f6;
+    --c-grey-border: #e5e5e5;
+    --c-text-muted: #666666;
+    --font-serif: "Georgia", Times, serif;
+    --font-sans: "Arial", Helvetica, sans-serif;
+}
+
+
+/* 1. Main */
+
+.book-page,
+.genre-archive {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: var(--font-serif);
+    color: var(--c-black);
+    line-height: 1.6;
+}
+
+
+/* 2. Single */
+
+.book-header {
+    border-bottom: 3px solid var(--c-black);
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+}
+
+.book-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.book-meta-top {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+    color: var(--c-text-muted);
+}
+
+.book-featured-image {
+    margin: 30px 0;
+}
+
+.book-featured-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.book-genres-section {
+    background: var(--c-grey-light);
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 6px solid var(--c-black);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+
+.genre-more-info {
+    color: var(--c-black);
+    text-decoration: underline;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.book-content {
+    font-size: 1.15rem;
+    margin-bottom: 60px;
+}
+
+
+/* 3. Genre */
+
+.archive-header {
+    border-bottom: 5px solid var(--c-black);
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+
+.archive-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    letter-spacing: -1px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+}
+
+.book-item {
+    border-bottom: 1px solid var(--c-grey-border);
+    padding-bottom: 40px;
+    transition: transform 0.2s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+}
+
+.book-thumbnail img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.book-item h2 {
+    font-size: 1.6rem;
+    margin: 15px 0 10px;
+    line-height: 1.2;
+}
+
+.book-item h2 a {
+    color: var(--c-black);
+    text-decoration: none;
+}
+
+.book-item .book-meta {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+
+/* 4. Pagination */
+
+.pagination {
+    margin: 60px 0;
+    text-align: center;
+    border-top: 1px solid var(--c-black);
+    padding-top: 30px;
+}
+
+.pagination .page-numbers {
+    padding: 12px 18px;
+    margin: 0 4px;
+    border: 1px solid var(--c-grey-border);
+    color: var(--c-black);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pagination .page-numbers.current,
+.pagination .page-numbers:hover {
+    background: var(--c-black);
+    color: var(--c-white);
+    border-color: var(--c-black);
+}
+
+
+/* 5. List */
+
+.latest-books-ajax {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 2px solid var(--c-black);
+}
+
+.ajax-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+
+/* 6. RESPONSIVE DESIGN */
+
+@media (max-width: 992px) {
+    .books-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-page,
+    .genre-archive {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+    .book-title {
+        line-height: 1.2;
+    }
+    .book-thumbnail img {
+        height: auto;
+    }
+    .pagination .page-numbers {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .archive-title {
+        font-size: 1.5rem;
+    }
+    .book-genres-section {
+        padding: 15px;
+    }
+}
