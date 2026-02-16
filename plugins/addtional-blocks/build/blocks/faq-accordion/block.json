@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "addtional-blocks/faq-accordion",
+  "title": "FAQ Accordion",
+  "category": "text",
+  "icon": "sort",
+  "description": "Add accordion faq section",
+  "keywords": [
+    "section",
+    "q&a"
+  ],
+  "version": "1.0.0",
+  "textdomain": "twentyfifthchild",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2"
+    },
+    "content_color": {
+      "type": "string",
+      "default": "#3C3C3C"
+    },
+    "faqItems": {
+      "type": "array",
+      "default": [
+        {
+          "question": "Question",
+          "answer": "Answear"
+        }
+      ],
+      "query": {
+        "question": {
+          "type": "string",
+          "source": "html",
+          "selector": ".faq-q"
+        },
+        "answer": {
+          "type": "string",
+          "source": "html",
+          "selector": ".faq-a"
+        }
+      }
+    }
+  },
+  "style": "file:./index.css"
+}
